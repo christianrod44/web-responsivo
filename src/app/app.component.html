@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Componentes Personalizados</h1>
+
+  <form [formGroup]="mainForm"> <div class="component-section">
+      <h2>Componente Select</h2>
+
+      <app-select-custom
+        formControlName="mySelect"
+        [options]="selectOptions"
+        label="Selecione uma Opção"
+        placeholder="Escolha aqui..."
+      ></app-select-custom>
+
+      <p>Valor atual: <strong>{{ mainForm.get('mySelect')?.value }}</strong></p>
+      <button (click)="toggleSelectDisable()">
+        {{ mainForm.get('mySelect')?.disabled ? 'Habilitar' : 'Desabilitar' }} Select
+      </button>
+    </div>
+
+    <div class="component-section">
+      <h2>Componente Switch</h2>
+
+      <app-switch-custom
+        formControlName="mySwitch"
+        label="Ativar Notificações"
+      ></app-switch-custom>
+
+      <p>Valor atual: <strong>{{ mainForm.get('mySwitch')?.value }}</strong></p>
+      <button (click)="toggleSwitchDisable()">
+        {{ mainForm.get('mySwitch')?.disabled ? 'Habilitar' : 'Desabilitar' }} Switch
+      </button>
+    </div>
+
+  </form>
+</div>

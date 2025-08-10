@@ -1,0 +1,7 @@
+<div class="switch-container">
+  <label *ngIf="label" class="switch-label">{{ label }}</label>
+  <label class="switch">
+    <input type="checkbox" [formControl]="switchControl">
+    <span class="slider"></span>
+  </label>
+</div>
